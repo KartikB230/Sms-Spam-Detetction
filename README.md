@@ -1,45 +1,77 @@
-# Sms-Spam-Detetction
+Spam-Ham Classification with Comparative Model Analysis
+This project classifies messages as either spam or ham using Natural Language Processing (NLP) techniques and machine learning models. It includes data visualization, preprocessing, and comparative analysis using three models: Naive Bayes, Support Vector Machine (SVM), and Random Forest.
 
-This project performs spam-ham classification using Natural Language Processing (NLP) and machine learning models such as Naive Bayes, SVM, and Random Forest. It includes data visualization, text preprocessing, and comparative analysis of model performance.
+Table of Contents
+Installation
+How to Run the Project
+How to Insert the Dataset
+Comparative Analysis of Models
+Output
+GitHub Repository
+License
+Installation
+To run this project, you need to install the required libraries. These can be installed directly in Google Colab or your local environment. Use the following commands to install the libraries:
 
-How to Run the Project in Google Colab
-Step 1: Open the Notebook in Google Colab
+bash
+Copy code
+pip install nltk
+pip install scikit-learn
+How to Run the Project
+Follow these steps to run the Jupyter notebook in Google Colab:
+
+1. Open the Notebook in Google Colab
+Option 1: Directly from GitHub
 Go to Google Colab.
-Click on the File menu and choose Open Notebook.
+Click on the File menu and select Open Notebook.
 In the pop-up window, go to the GitHub tab.
-Enter the URL of this repository and select the .ipynb file from the list.
-Alternatively, you can upload the notebook manually:
-Download the .ipynb file from this repo.
-In Colab, choose File > Upload Notebook and select the downloaded file.
-Step 2: Insert the Dataset
-After opening the notebook, scroll to the dataset loading section.
-If you have the dataset file locally, upload it:
-In Colab, click on the Files icon (left panel).
-Click on the Upload button and choose your dataset (e.g., spam_ham_dataset.csv).
-Modify the dataset path in the code accordingly.
-Alternatively, you can mount your Google Drive and load the dataset directly from it:
+Enter the URL of this repository and select the .ipynb file.
+Option 2: Manually Upload the Notebook
+Download the .ipynb file from this repository.
+In Colab, select File > Upload Notebook and upload the downloaded file.
+2. Run the Notebook
+Once the notebook is open in Colab, click on the Runtime tab.
+Select Run All to execute all cells sequentially. Ensure you upload the dataset (instructions below).
+How to Insert the Dataset
+You can insert the dataset in two ways:
+
+1. Upload the Dataset Locally
+In the Colab interface, click on the Files icon on the left panel.
+Click the Upload button and upload your dataset file (e.g., spam_ham_dataset.csv).
+Modify the dataset path in the notebook code:
+python
+Copy code
+df = pd.read_csv('/content/spam_ham_dataset.csv')
+2. Load Dataset from Google Drive
+Mount your Google Drive in Colab using the following code:
+
 python
 Copy code
 from google.colab import drive
 drive.mount('/content/drive')
-# Load the dataset from Google Drive
-dataset_path = '/content/drive/MyDrive/your_dataset.csv'
+dataset_path = '/content/drive/MyDrive/spam_ham_dataset.csv'
 df = pd.read_csv(dataset_path)
-Step 3: Install Required Libraries
-Ensure that you install the necessary libraries if not already present. Use the following commands in Colab cells:
+Replace the dataset_path with the correct path to your file in Google Drive.
 
-python
-Copy code
-!pip install nltk
-!pip install scikit-learn
-Step 4: Run All Cells
-Once the dataset is loaded and libraries are installed:
+Comparative Analysis of Models
+This project uses three machine learning models to classify the messages:
 
-Click on Runtime in the menu.
-Select Run All to execute all cells.
-The notebook will run through data preprocessing, model training (Naive Bayes, SVM, Random Forest), and generate the comparative analysis of the models.
+Naive Bayes
+Support Vector Machine (SVM)
+Random Forest
+Each model is trained on the preprocessed text data, and their performance is compared based on accuracy, confusion matrix, precision, recall, and F1-score.
+
 Output
-The notebook includes model accuracy, confusion matrix, and precision-recall visualizations for performance comparison.
+The final section of the notebook provides:
 
-GitHub Link
+Visualizations for data distribution and model comparison.
+Model Performance Metrics:
+Accuracy
+Precision-Recall
+Confusion Matrix for each model.
+Comparative Analysis of Naive Bayes, SVM, and Random Forest.
+GitHub Repository
+You can find the project files and the Jupyter Notebook in this repository:
 [Your GitHub Repository Link Here]
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
